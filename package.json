@@ -1,0 +1,24 @@
+{
+  "name": "bfth-be",
+  "version": "1.0.0",
+  "description": "make dome shit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TvMan/bfth-be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TvMan/bfth-be/issues"
+  },
+  "homepage": "https://github.com/TvMan/bfth-be#readme",
+  "dependencies": {
+    "instagram-private-api": "^0.6.7",
+    "request": "^2.85.0",
+    "websocket-lib": "^3.2.2"
+  }
+}
