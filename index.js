@@ -18,6 +18,7 @@ var server = ws.createServer(function (session) {
 
     session.on('data', function (data) {
         console.log('get request');
+        this.send(5);
         request(pairsApiEndpoint, function (error, responce) {
             if (!error && itemsToSend == 0) {
 
@@ -50,4 +51,4 @@ var server = ws.createServer(function (session) {
 
 });
 
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 8000);
