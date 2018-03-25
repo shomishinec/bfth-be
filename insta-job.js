@@ -4,7 +4,7 @@ let session = null;
 instapi.init();
 
 function getMedia(resolve, reject) {
-    instapi.media(userSession, function (count) {
+    instapi.media(session, function (count) {
         resolve(count);
     });
 }
