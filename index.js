@@ -19,8 +19,9 @@ var server = ws.createServer(function (session) {
     session.on('data', function (data) {
         console.log('get request');
         // this.send("4");
-        request(pairsApiEndpoint, function (error, responce) {
-            if (!error && itemsToSend === 0) {
+
+        //request(pairsApiEndpoint, function (error, responce) {
+            if (itemsToSend === 0) {
 
                 instaJob.run().then(function (newCount) {
                     let delta = newCount - count;
@@ -41,7 +42,9 @@ var server = ws.createServer(function (session) {
                 this.send('4');
                 itemsToSend = --itemsToSend;
             }
-        }.bind(this));
+            console.log('item to send = ' + itemsToSend);
+
+        //}.bind(this));
 
     });
 
