@@ -22,21 +22,21 @@ var server = ws.createServer(function (session) {
         request(pairsApiEndpoint, function (error, responce) {
             if (!error && itemsToSend == 0) {
 
-                instaJob.run().then(function (newCount) {
-                    let delta = newCount - count;
-                    count += delta;
-                    if (count < 0) {
-                        itemsToSend = 0;
-                    }
-                    itemsToSend += delta;
-                    if (itemsToSend < 0) {
-                        itemsToSend = 0;
-                    }
-                    if (itemsToSend > 0) {
-                        this.send(7)
-                        itemsToSend = --itemsToSend;
-                    }
-                }.bind(this));
+                // instaJob.run().then(function (newCount) {
+                //     let delta = newCount - count;
+                //     count += delta;
+                //     if (count < 0) {
+                //         itemsToSend = 0;
+                //     }
+                //     itemsToSend += delta;
+                //     if (itemsToSend < 0) {
+                //         itemsToSend = 0;
+                //     }
+                //     if (itemsToSend > 0) {
+                //         this.send(7)
+                //         itemsToSend = --itemsToSend;
+                //     }
+                // }.bind(this));
             } else {
                 this.send(7)
                 itemsToSend = --itemsToSend;
